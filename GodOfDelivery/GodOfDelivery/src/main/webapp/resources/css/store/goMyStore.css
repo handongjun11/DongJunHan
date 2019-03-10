@@ -1,0 +1,80 @@
+@charset "UTF-8";
+table{
+	top: 172px;
+    position: relative;
+    left: 18%;
+}
+#storeStatus{
+	position: relative;
+    top: 130px;
+    left: 19%;
+}
+#menu{
+    position: relative;
+    top: 82px;
+    left: 70%;
+}
+#left{
+	width:190px; border-right:1px solid red; padding-right:12px; text-align:justify
+}
+#right{
+	padding-left:10px;
+}
+.storeName{
+	width: 400px;
+	cursor:pointer;
+    margin-bottom: 27%;
+}
+.storeName:hover {
+   text-decoration: underline; 
+}
+.boxEvent{
+	top: -93px;
+    position: relative;
+    background-color: rgb(224,224,224);
+    height: 49px;
+    text-align: center;
+    display:none;
+	
+}
+
+.boxEvent span {
+  display: table-cell;
+  vertical-align: middle;
+}
+#left{
+	border-right: 1px black solid; 
+	height:462px;
+}
+.table-bordered{
+	    border: 1px solid #dee2e6;
+    position: relative;
+    top: -284px;
+    left: 726px;
+    width: 523px;
+}
+.storeOrder{
+	    position: relative;
+    left: -39%;
+    top: 12px;
+}
+.orderCount{
+	position: relative;
+    left: 285%;
+    top: -8px;
+}
+.statistics{
+	position: relative;
+    left: 11%;
+    top: -30px;
+}
+.storeUpdate{
+	    position: relative;
+    left: 10%;
+    top: -30px;
+}
+.storeReview{
+	    position: relative;
+    top: -30px;
+    left: 10%;
+}

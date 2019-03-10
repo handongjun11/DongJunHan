@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/*매장 기본 정보 */
+div#menuThumb-container{
+	width: 60%;
+    margin: 0 auto;
+    top: 100px;
+}
+
+/*북마크 버튼*/
+.btn-checkBookMark{
+	padding:0;
+	width : 25px;
+	height: 25px;
+	border: none;
+}
+
+#last-container{
+	margin : 0 auto;
+	margin-top: 100px;
+}
+
+div#last-container .btn-primary:hover{
+	background-color: #32aeb8;
+}
+
+/*상세보기 내용 전부 담고 있는 div*/
+div#menuView-container{
+    position: relative;
+    width: 100%;
+    top: 35px;
+    margin: 0 auto;
+}
+div#menuView-container table thead th{
+	border-top : none;
+}
+div#menuView-left {
+	margin-left: 70px;
+}
+
+/* 매장 메뉴, 정보, 리뷰 탭 */
+div#MenuNavi{
+    position: relative;
+    width : 61%;
+    margin-bottom: 10px;
+}
+
+div#MenuNavi a{
+	color : #117a8b;
+}
+ div#MenuNavi .nav-link.active{
+ 	color : black;
+ }
+
+/* 매장 메뉴, 리뷰, 정보 테이블이 담긴 div*/
+div#Menu-wrapper{
+	float : left;
+	width: 60%;
+	/* margin-right: 60px; */
+	border: 1px solid transparent;
+}
+
+/* 메뉴 테이블*/
+table#menuTable{
+    position: relative;
+	margin-bottom: 100px;
+}
+table#menuTable tr td:nth-of-type(3){
+	text-align : center;
+}
+/* 리뷰 테이블 */
+.inner_border{
+	position: relative;
+    margin-bottom: 100px;
+	border : 1px solid #ddd;	
+    padding: 10px;
+}
+
+
+table#sellerReviewList{
+	
+}
+
+table#sellerReviewList td{
+	border : none;
+}
+
+.reviewAnswerTr {
+	background: #ddd;
+}
+.checked {
+  color: orange !important;
+}
+.fa-star{
+  color : #c5c5c5;
+}
+
+
+
+
+/* 가게정보*/
+table#sellerInformation{
+    position: relative;
+    margin-bottom: 100px;
+}
+
+/* 주문표 div*/
+div#Cart-wrapper{
+	float: right;
+    width: 30%;
+    margin-right: 20px;
+}
+
+/* 주문표 table */
+table#cart{
+	width : 30%;
+	top: 0px;
+	position: absolute;
+}
+
+table#cart th{
+	text-align: center;
+}
+
+table#cart td{
+	text-align : center;
+}
+
+/* 수량 표시*/
+input.order-num{ /*cart[i].amount*/
+	width: 30px;
+    text-align: center;
+    margin : 0 15px;
+    border: none;
+}
+
+/* 수량 증가/감소 버튼 */
+button.btn-xs{
+	background-color: white;
+    border: 1px solid #c5c5c5;;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+button.add-order-num{
+    
+}
+button.minus-order-num{
+	width: 24.95px;
+}
+
+button:disabled{
+	background-color: #ccc;
+	cursor : default;
+}
+
+button#btn-order{
+	background-color: #117a8b;
+    border-color: white;
+    color: white;
+}
+
+/* 메뉴 삭제 버튼*/
+button.delete-order{
+	width: 24.95px;
+    height: 28px;
+    background: white;
+    border: 1px solid #c5c5c5;
+    color: #545b62;
+}
+
+
+img{
+	width:93px;
+}
+
+
+.introduce{
+	font-weight: bold;
+}
+
+
+/* 모달 css */
+.modal-header{
+	background: #d1ecf1;
+	color: #fff;
+}
+
+ 
+ /* .label {margin-bottom: 96px;}
+.label * {display: inline-block;vertical-align: top;}
+.label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+.label .center {background: url(http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+.label .right {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+ */

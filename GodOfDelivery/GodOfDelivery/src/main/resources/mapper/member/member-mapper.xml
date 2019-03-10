@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="member">
+	
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO shy.member (memberId, memberName, birth, gender, email, address, phone, favorite, oldFile, renamedFile, memberGrade, totalAmount, enrolldate, delFlag, blackFlag, password) 
+		VALUES(#{memberId},#{memberName},#{birth},#{gender},#{email},#{address},#{phone},#{favorite,typeHandler=com.kh.god.common.typehandler.StringArrayTypeHandler},#{oldFile},#{renamedFile},default,default,sysdate,default,default,#{password})
+	</insert>											
+	
+ 	<resultMap type="member" id="memberMap">
+		<result column="favorite" property="favorite" typeHandler="strArrTypeHandler"/>
+	</resultMap>
+
+	<select id="selectOneMember" parameterType = "string" resultMap="memberMap">
+		SELECT * FROM MEMBER WHERE MEMBERID = #{memberId}
+	</select>
+	
+	<update id="updateMember" parameterType="member">
+		UPDATE MEMBER
+		SET email = #{email}, address = #{address}, phone = #{phone},
+			favorite = #{favorite,typeHandler=com.kh.god.common.typehandler.StringArrayTypeHandler},
+			oldFile = #{oldFile}, renamedFile = #{renamedFile} 
+			<if test="password != '' " >
+				,password = #{password}
+			</if>
+		WHERE memberId = #{memberId}
+	</update>
+	
+	<update id="deleteMember">
+		UPDATE MEMBER SET delflag = 'Y' WHERE memberId = #{memberId}
+	</update>
+	
+	<select id="checkBookMark" resultType="_int">
+        select count(*) as cnt from bookmark
+        WHERE memberId = #{memberId} and storeNo = #{storeNo}
+    </select>
+    
+    <select id="couponListBymemberId" resultType="map">
+    	select A.* from (select E.eventNo,E.eventTitle,E.discount,C.memberId,C.useFlag,C.storeno from coupon C,event E where C.eventno = E.eventno) A where memberid=#{memberId} and useflag='N' and storeno='all' or storeno=#{storeNo}
+    </select>
+    
+    
+    <select id="getDiscount" resultType="_double">
+		select discount from event where eventno=#{eventNo}
+    </select>
+
+	<insert id="insertBookMark">
+		INSERT INTO bookmark (BOOKMARKNO, MEMBERID, STORENO)
+		VALUES (seq_bookmarkno.nextval, #{memberId}, #{storeNo})
+	</insert>
+	
+	<delete id="deleteBookMark">
+		DELETE FROM bookmark WHERE memberId = #{memberId} and storeno = #{storeNo}
+	</delete>
+	
+	<select id="bookMarkList" resultType="storeInfo">
+		select s.*
+		from storeinfo s left join bookmark b on s.storeNo = b.storeNo
+		where b.memberId = #{memberId}
+	</select>
+	
+	<resultMap type="storeInfo" id="storeInfoMap"></resultMap>
+	
+	<select id="orderList" resultType="map">
+		select o.*, r.reviewNo
+		from orderInfo o left join review r on o.orderNo = r.orderNo
+		where memberid = #{memberId} and RECEIVEFLAG = 'Y'
+	</select>
+		
+	<resultMap type="orderInfo" id="orderInfoMap"></resultMap>
+	
+	<select id="selectOrderMenuList" resultType="map">
+		select * 
+		from ordermenu o
+		left join menu m on o.menucode = m.menucode
+		Left join storeinfo s on o.storeNo = s.storeNo
+		where orderNo = #{orderNo}
+	</select>	
+	
+	<select id="reviewList" resultType="review">
+		SELECT * FROM REVIEW WHERE writer = #{memberId} AND DELFLAG = 'N'
+	</select>	
+	
+	<select id="selectRAttachmentList" resultType="RAttachment">
+		SELECT * FROM RATTACHMENT
+		WHERE REVIEWNO = #{reviewNo}
+	</select>
+	
+	<select id="selectOneRattachment" resultType="RAttachment">
+		SELECT * FROM RATTACHMENT WHERE REVIEWNO = #{reviewNo}
+	</select>
+	
+	<insert id="insertMemberReview">
+		INSERT INTO review (REVIEWNO, STORENO, ORDERNO, TITLE, WRITER, CONTENT, RATE, GOOD, HATE, RDATE, DELFLAG, COMMENTLEVEL)     
+		VALUES (SEQ_REVIEWNO.nextval, #{storeNo}, #{orderNo}, #{title}, #{writer}, #{content}, #{rate}, default, default, sysdate, default, 1)
+	</insert>
+	
+	<select id="selectOneReview" resultType="review">
+		SELECT * FROM REVIEW
+		WHERE ORDERNO = #{orderNo}
+	</select>
+		
+	<insert id="insertRAttachment">
+		INSERT INTO RAttachment (ATTACHMENTNO, REVIEWNO, ORIGINALFILENAME, RENAMEDFILENAME, UPLOADDATE, STATUS)
+		VALUES(seq_rattachmentno.nextval, #{reviewNo}, #{originalFileName}, #{renamedFileName}, sysdate, default)
+	</insert>
+			
+	<update id="deleteMemberReview">
+		UPDATE REVIEW SET DELFLAG = 'Y' WHERE REVIEWNO = #{reviewNo}
+	</update>
+    
+    <select id="">
+		select count(*) from bookmark 
+		WHERE memberId = #{memberId} and storeNo = #{storeNo}
+	</select>	
+		
+	<select id="findId" resultType="member">
+		select * from member where email = #{email}
+	</select>
+	
+	<update id="updateMemberFindPwd">
+		update seller set password = #{password} where memberid = #{memberId}
+	</update>
+	
+	<insert id="insertWebReview">
+		insert into webreview (boardno , title , writer , content , writedate , rate) values(SEQUENCE_webreview_bno.nextval , #{title} , #{writer} , #{content} , default , #{rate})
+	</insert>
+	
+	<select id="selectListWebReiveiw" resultType="WebReview">
+		select * from webreview 
+	</select>
+	
+	<select id="selectWebReiveiwTotalContents" resultType="_int">
+		SELECT COUNT(*) FROM webreview
+	</select>
+
+</mapper>

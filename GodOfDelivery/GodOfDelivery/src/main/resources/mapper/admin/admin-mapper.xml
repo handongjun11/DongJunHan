@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="admin">
+	
+	<select id="selectBoardList" resultMap = "boardMap">
+		select * from qnaboard where category='FAQ' order by boardno
+	</select>
+	<resultMap type="map" id="boardMap">
+	</resultMap>
+	
+	<select id="countBoardList" resultType="_int">
+		select count(*) as cnt from qnaboard where category='FAQ'
+	</select>
+	
+	<select id="selectEventAllList" resultMap = "eventMap">
+		select * from event order by eventNo desc
+	</select>
+	
+	<select id="countEventAllList" resultType="_int">
+		select count(*) as cnt from event
+	</select>
+	
+	<select id="selectEventIngList" resultMap = "eventMap">
+		<![CDATA[ select * from event where enddate >= sysdate order by eventNo desc ]]>
+	</select>
+	
+	<select id="countEventIngList" resultType="_int">
+		<![CDATA[ select count(*) as cnt from event where enddate >= sysdate ]]>
+	</select>
+	
+	<select id="selectEventEndList" resultMap = "eventMap">
+		<![CDATA[ select * from event where enddate < sysdate order by eventNo desc  ]]>
+	</select>
+	
+	<resultMap type="map" id="eventMap">
+	</resultMap>
+	
+	<select id="countEventEndList" resultType="_int">
+		<![CDATA[ select count(*) as cnt from event where enddate < sysdate ]]>
+	</select>
+	
+	<select id="getLastEventNo" resultType="_int">
+		select last_number from user_sequences where sequence_name='SEQ_EVENT_EVENTNO'
+	</select>
+	
+	<insert id="insertEvent" parameterType="event">
+		insert into event values(seq_event_eventno.nextval, #{eventTitle}, #{discount}, #{eventBig}, #{startDate}, #{endDate}, #{amount}, #{eventSmall})
+	</insert>
+	
+	<select id="qnaBoardView" resultType="qnaBoard">
+		select * from qnaboard where boardNo = #{boardNo }
+	</select>
+	
+	<select id="selectSellerAllList" resultMap="sellerMap">
+		select * from seller
+	</select>
+	
+	<select id="countSellerList" resultType="_int">
+		select count(*) as cnt from seller
+	</select>
+	
+
+	<select id="eventView" resultType="event">
+		select * from event where eventNo = #{eventNo}
+	</select>
+
+	<update id="changeSellerbFlagtoN">
+		update seller set blackFlag='N' where sellerId = #{sellerId }
+	</update>
+	
+	<update id="changeSellerbFlagtoY">
+		update seller set blackFlag='Y' where sellerId = #{sellerId }
+	</update>
+	
+	<select id="selectQNAList" resultType="qnaBoard">
+		select * from qnaboard where boardWriter = #{boardWriter } order by boardno desc
+	</select>
+	<select id="countQNAList" resultType="_int">
+		select count(*) as cnt from qnaboard where boardWriter = #{boardWriter }
+	</select>
+	
+	<insert id="insertAsking" parameterType="qnaBoard">
+		insert into qnaboard(boardNo, boardTitle,boardContent,boardWriter,category) values(seq_qnaboard_boardno.nextval,#{boardTitle },#{boardContent },#{boardWriter },'qna')
+	</insert>
+	
+	<select id="boardRefList" resultType="qnaBoard">
+		select * from qnaboard where boardlevel = 2
+	</select>
+	
+	<select id="qnaBoardRefView" resultType="qnaBoard">
+		select * from qnaboard where boardNo = #{boardNo }
+	</select>
+	
+	<select id="countMemberList" resultType="_int">
+		select count(*) as cnt from member where delflag = 'N'
+	</select>
+	
+	<select id="selectMemberAllList" resultMap="memberMap">
+		select * from member where delflag = 'N'
+	</select>
+
+	
+	<delete id="deleteEvent" parameterType="_int">
+		delete event where eventNo=#{eventNo}
+	</delete>
+
+	<select id="qnaControlList" resultType="qnaBoard">
+		select * from qnaboard where boardno not in (select boardref from qnaboard where boardlevel=2) and category='qna' order by boardno desc
+	</select>
+	
+	<select id="countQnaControlList" resultType="_int">
+		select count(*) as cnt from qnaboard where boardno not in (select boardref from qnaboard where boardlevel=2) and category='qna' order by boardno desc
+	</select>
+	
+	<select id="qnaAnswer" resultType="qnaBoard">
+		select * from qnaboard where boardNo = #{boardNo }
+	</select>
+	
+	<insert id="insertAnswer" parameterType="qnaBoard">
+		insert into qnaboard values(seq_qnaboard_boardno.nextval,#{boardTitle },#{boardContent }, #{boardWriter }, #{boardLevel } ,#{boardRef },#{category },sysdate)
+	</insert>
+	
+	<select id="selectSellerBL" resultType="seller">
+		select * from seller where blackFlag='Y'
+	</select>
+	
+	<select id="countSellerBL" resultType="_int">
+		select count(*) as cnt from seller where blackFlag='Y'
+	</select>
+	
+	<select id="selectMemberBL" resultType="member">
+		select * from member where blackFlag='Y'
+	</select>
+	
+	<select id="countMemberBL" resultType="_int">
+		select count(*) as cnt from member where blackFlag='Y'
+	</select>
+	
+	<update id="changeMemberbFlagtoN">
+		update member set blackFlag='N' where memberId = #{memberId }
+	</update>
+	
+	<update id="changeMemberbFlagtoY">
+		update member set blackFlag='Y' where memberId = #{memberId }
+	</update>
+	
+	<select id="selectAdList" resultType="ad">
+		select * from ad order by adno desc
+	</select>
+	
+	<select id="countAdList" resultType="_int">
+		select count(*) as cnt from ad
+	</select>
+	
+	<select id="selectAdingList" resultType="ad">
+		<![CDATA[ select * from ad where enddate >= sysdate ]]>
+	</select>
+	
+	<select id="countAdingList" resultType="_int">
+		<![CDATA[ select count(*) as cnt from ad where enddate >= sysdate ]]>
+	</select>
+	
+	<select id="selectAdedList" resultType="ad">
+		<![CDATA[ select * from ad where enddate < sysdate ]]>
+	</select>
+	
+	<select id="countAdedList" resultType="_int">
+		<![CDATA[ select count(*) as cnt from ad where enddate < sysdate ]]>
+	</select>
+	
+	<select id="adStoreView" resultType="storeInfo">
+		select * from storeinfo where storeNo = #{storeNo }
+	</select>
+	
+	<select id="adStoreAdView" resultType="ad">
+		select * from ad where adNo = #{adNo }
+	</select>
+	
+	<update id="deleteAd">
+	{call
+		declare
+		begin
+		update ad set enddate = sysdate where adNo = #{adNo };
+		update storeInfo set storegrade = 'C' where storeNo = #{storeNo };
+		end
+	}
+	</update>
+	
+	<resultMap type="map" id="memberMap">
+	</resultMap>
+	<resultMap type="map" id="sellerMap">
+	</resultMap>
+	
+	
+	<update id="updateEvent" parameterType="event">
+		update event set eventTitle=#{eventTitle}, discount=#{discount}, amount=#{amount}, startDate=#{startDate}, endDate=#{endDate}, eventSmall=#{eventSmall}, eventBig=#{eventBig} where eventNo=#{eventNo}
+	</update>
+	
+	<select id="selectStorePMSList" resultType="storeInfo">
+		select * from storeInfo where pmsflag='N' or pmsflag='R'
+	</select>
+	
+	<select id="countStorePMSList" resultType="_int">
+		select count(*) from storeInfo where pmsflag='N' or pmsflag='R'
+	</select>
+	
+	<select id="selectStoreList" resultType="storeInfo">
+		select * from storeInfo where (pmsflag='Y' or pmsflag='C')
+		<if test="searchType != '' and searchKeyword != ''">
+			and ${searchType} like '%${searchKeyword}%'
+		</if>
+	</select>
+	
+	<select id="countStoreList" resultType="_int">
+		select count(*) from storeInfo where (pmsflag='Y' or pmsflag='C')
+		<if test="searchType != '' and searchKeyword != ''">
+			and ${searchType} like '%${searchKeyword}%'
+		</if>
+	</select>
+
+	<insert id="couponDownload" parameterType="coupon">
+		insert into coupon values(seq_coupon_couponNo.nextval,#{eventNo},#{memberId},#{startDate},#{endDate},default)
+	</insert>
+	<update id="couponAmount">
+		update event set amount = amount -1 where eventNo = #{eventNo}
+	</update>
+
+	<select id="timeChart" resultType="string">
+		<![CDATA[ select to_char(ordertime, 'hh24') from orderinfo where to_char(ordertime, 'mm') >= to_char(sysdate, 'mm') and to_char(ordertime, 'mm')<(to_char(sysdate,'mm')+1) ]]>
+	</select>
+	
+	<select id="totalCostByMonthly" resultType="_int">
+		<![CDATA[ select totalPrice from orderinfo where to_char(ordertime, 'mm') >= to_char(sysdate, 'mm') and to_char(ordertime, 'mm')<(to_char(sysdate,'mm')+1) ]]>
+	</select>
+	
+	<select id="adCostByMonthly" resultType="_int">
+		<![CDATA[ select price from ad where to_char(enddate, 'mm') >= to_char(sysdate, 'mm') and to_char(enddate, 'mm')<(to_char(sysdate,'mm')+1) ]]>
+	</select>
+	
+	<select id="chartByMonth" resultType="string">
+		<![CDATA[ select to_char(ordertime, 'mm') as month from orderinfo where to_char(ordertime, 'yyyy') = #{year} ]]>
+	</select>
+	
+	<select id="couponList" resultType="coupon">
+		select eventNo from coupon where memberId = #{memberId}
+	</select>
+	
+	<select id="selectEventStoreList" resultMap = "eventMap">
+		<![CDATA[ select e.* from event e join coupon c on e.eventNo = c.eventNo where c.enddate >= sysdate and c.storeNo not like 'all' order by c.eventNo desc ]]>
+	</select>
+	
+	<select id="countEventStoreList" resultType="_int">
+		<![CDATA[ select count(*) as cnt from coupon where enddate >= sysdate and storeNo not like 'all']]>
+	</select>
+<!-- ============================================== -->
+	<select id="storePMSView" resultType="storeInfo">
+		select * from storeInfo where storeNo=#{storeNo}
+	</select>
+	
+	<select id="storePMSAttaView" resultType="SAttachment">
+		select * from sattachment where storeNo=#{storeNo}
+	</select>
+	
+	<update id="storePMSOk">
+		update storeInfo set pmsflag='Y', rejectInfo=null where storeNo=#{storeNo}
+	</update>
+	
+	<update id="storePMSReject">
+		update storeInfo set pmsflag='R', rejectInfo=#{rejectInfo} where storeNo=#{storeNo}
+	</update>
+	
+	<update id="storePMSClose">
+		update storeInfo set pmsflag='C' where storeNo=#{storeNo}
+	</update>
+
+	<update id="storePMSOpen">
+		update storeInfo set pmsflag='Y' where storeNo=#{storeNo}
+	</update>
+	
+	<select id="carouselEvent" resultMap="eventMap">
+		<![CDATA[ select * from event where startdate <= sysdate and enddate >= sysdate order by eventNo desc ]]>
+	</select>
+	
+	<select id="chartByCategory" resultType="_int">
+		select sum(O.totalPrice) totalPrice
+		from orderInfo O, storeInfo S
+		where O.storeNo = S.storeNo
+		group by categoryNo
+		order by categoryNo
+	</select>
+	
+	<select id="chartByWeek" resultType="_int">
+		<![CDATA[
+		select nvl(column3, 0)
+		from (select column1, column2 from (SELECT TO_CHAR(TO_DATE(#{weeklyStartDate}, 'YYYY/MM/DD')+LEVEL-1, 'YYYY/MM/DD') column1 FROM DUAL CONNECT BY LEVEL <= (TO_DATE(#{weeklyEndDate}, 'YYYY/MM/DD')-TO_DATE(#{weeklyStartDate}, 'YYYY/MM/DD')+1)), (SELECT LEVEL column2 FROM DUAL CONNECT BY LEVEL <= 7)) A
+		left join (select to_char(O.deliveryEnd, 'yyyy/mm/dd') column4, S.categoryno, nvl(sum(O.originalPrice), 0) column3 from orderInfo O, storeInfo S where O.storeNo = S.storeNo and (O.deliveryend between to_date(#{weeklyStartDate}, 'yyyy/mm/dd') and to_date(#{weeklyEndDate}, 'yyyy/mm/dd')+1)
+		group by to_char(O.deliveryEnd, 'yyyy/mm/dd'), S.categoryno) B on A.column2 = B.categoryno and A.column1 = B.column4 order by column1, column2
+		]]>
+	</select>
+	
+	<select id="chartByCategoryAmount" resultType="_int">
+		select count(*) 
+		from orderinfo O, storeinfo S
+		where O.storeno = S.storeno and to_char(O.deliveryend, 'mm') = (select to_char(sysdate, 'mm') from dual)
+		group by categoryno
+		order by categoryno
+	</select>
+	
+	<select id="selectReportList" resultType="report">
+		select * from report order by reportFlag
+	</select>
+	
+	<select id="countReportList" resultType="_int">
+		select count(*) from report
+	</select>
+	
+	<select id="reportView" resultType="report">
+		select * from report where reportNo=#{reportNo}
+	</select>
+	
+	<select id="reviewReportView" resultType="review">
+		select * from review where reviewNo=#{reviewNo}
+	</select>
+	
+	<update id="updateReviewReportFlagY">
+		{call
+			declare
+			begin
+			update report set reportFlag='Y' where reportNo=#{reportNo};
+			update review set delFlag='Y' where reviewNo=#{reviewNo};
+			update member set blackFlag='Y' where memberId=#{memberId};
+			end
+		}
+	</update>
+	
+	<update id="updateReportFlagR">
+		update report set reportFlag='R' where reportNo=#{reportNo}
+	</update>
+	
+	<select id="storeReportStoreInfoView" resultType="storeInfo">
+		select * from storeInfo where storeNo=#{storeNo}
+	</select>
+	
+	<select id="storeReportSellerView" resultType="seller">
+		select * from seller where sellerId=#{sellerId}
+	</select>
+	
+	<update id="updateStoreReportFlagY">
+		{call
+			declare
+			begin
+			update report set reportFlag='Y' where reportNo=#{reportNo};
+			update storeInfo set pmsFlag='C' where sellerId=#{sellerId};
+			update seller set blackFlag='Y' where sellerId=#{sellerId};
+			end
+		}
+	</update>
+	
+</mapper>
+

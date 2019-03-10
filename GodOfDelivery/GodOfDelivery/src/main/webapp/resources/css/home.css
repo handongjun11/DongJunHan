@@ -1,0 +1,34 @@
+@charset "UTF-8";
+#location-img{
+	width: 17%;
+    height: 10%;
+    position: relative;
+    left: 76%;
+}
+
+#location-img:hover{
+	box-shadow: 1px 1px 20px #ddd;
+}
+
+section#menu-content{
+	background: linear-gradient(to top, 
+				transparent 0, transparent 70%,
+				#32aeb8 70%, #32aeb8 100%);
+}
+div#menu-content{
+    padding: 50px;
+    overflow: auto;
+    margin: 0 auto;
+    max-width: 912px;
+}
+div#search-container{
+	display: table;
+    padding: 100px 0;
+    margin: 0 auto;
+}
+.card{
+	width: 250px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+}

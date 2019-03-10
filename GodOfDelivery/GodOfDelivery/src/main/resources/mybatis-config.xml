@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC 
+		"-//mybatis.org//DTD Config 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>				   						
+		<typeAlias type="com.kh.god.common.typehandler.StringArrayTypeHandler"
+				   alias="strArrTypeHandler"/>
+				   
+		<typeAlias type="com.kh.god.member.model.vo.Member"
+				   alias="member"/>	   
+				   
+		<typeAlias type="com.kh.god.member.model.vo.Review"
+				   alias="review"/>			   
+				   
+		<typeAlias type="com.kh.god.member.model.vo.RAttachment"
+				   alias="RAttachment"/>	
+				   
+		<typeAlias type="com.kh.god.storeInfo.model.vo.StoreInfo"
+				   alias="storeInfo"/>
+				   
+		<typeAlias type="com.kh.god.admin.model.vo.Event"
+				   alias="event"/>	 
+		
+		<typeAlias type="com.kh.god.admin.model.vo.Ad"
+				   alias="ad"/>	  
+				   
+		<typeAlias type="com.kh.god.admin.model.vo.QnaBoard"
+				   alias="qnaBoard"/>	
+
+		<typeAlias type="com.kh.god.seller.model.vo.Seller"
+				   alias="seller"/>
+				   
+		<typeAlias type="com.kh.god.menu.model.vo.Menu"
+				   alias="menu"/>
+				   
+		<typeAlias type="com.kh.god.storeInfo.model.vo.MenuAttachment"
+				   alias="menuAttachment"/>
+				   
+		<typeAlias type="com.kh.god.seller.model.vo.OrderInfo"
+				   alias="orderInfo"/>
+		
+		<typeAlias type="com.kh.god.storeInfo.model.vo.SAttachment"
+				   alias="SAttachment"/>
+		
+		<typeAlias type="com.kh.god.chat.model.vo.Chat"
+				   alias="chat"/>	
+		
+		<typeAlias type="com.kh.god.chat.model.vo.ChatRoom"
+				   alias="chatRoom"/>	
+				   
+		<typeAlias type="com.kh.god.admin.model.vo.Coupon"
+				   alias="coupon" />
+				   
+		<typeAlias type="com.kh.god.admin.model.vo.Report"
+				   alias="report" />
+		
+		<typeAlias type="com.kh.god.member.model.vo.WebReview"
+				   alias="webReview" />
+
+		<typeAlias type="com.kh.god.stomp.model.vo.Msg"
+				   alias="msg" />
+	</typeAliases>
+	
+	
+</configuration>

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="storeInfo">
+	<select id="selectStoreInfoList" resultType="map">
+select A.*,M.renamedfilename from storeInfo A LEFT OUTER JOIN
+(select storeno,renamedfilename from menuattachment where thumbflag='Y')M 
+on A.storeno=M.storeno where categoryno = #{categoryno} and pmsFlag = 'Y'
+	</select>
+	
+
+	<select id="selectStoreInfoTotalContents" resultType="_int">
+		SELECT COUNT(*) FROM STOREINFO WHERE CATEGORYNO = #{categoryno}
+	</select>
+
+	<select id="getMyStore" resultType="storeInfo">
+		select * from storeinfo where sellerId = #{sellerId}
+	</select>
+
+	<insert id="addStore">
+		insert into storeinfo values(#{storeNo} ,
+		#{storeName}, #{storeTel} , #{storeAddress} , default , #{categoryNo}
+		, #{storeIntro}, #{personalDay} , #{operatingHours} , default, default
+		,#{deliveryMinPrice} , #{sellerId} , default)
+	</insert>
+
+	<insert id="insertAttachment">
+		insert into sattachment(attachmentno , storeno ,
+		originalfilename, renamedfilename, uploaddate , downloadcount, status
+		)
+		values (seq_sAttachmentno.nextval , #{storeNo} , #{originalFileName}
+		, #{renamedFileName}, default, 0 ,default )
+	</insert>
+
+	<select id="myStoreMenu" resultType="menu">
+		select m.menuName,
+		m.menuPrice
+		select m.menuName, m.menuPrice
+		from storeinfo s join menu m on s.storeNo = m.storeNo
+		where s.sellerId = #{sellerId} and s.storeNo = #{storeNo}
+    </select>
+
+   <select id="menuList"  resultType="map">
+   	select A.*,M.renamedfilename from menu A LEFT OUTER JOIN
+	(select storeno,renamedfilename from menuattachment)M 
+	on A.storeno=M.storeno where A.storeno=#{storeNo}
+   </select>
+   
+   <select id="storeInfoList"  resultType="map">
+   	  select A.*,M.renamedfilename from storeinfo A LEFT OUTER JOIN
+	(select storeno,renamedfilename from menuattachment where thumbflag='Y')M 
+	on A.storeno=M.storeno where A.storeno=#{storeNo}
+   </select>
+	
+   <select id="menuCount"  resultType="_int">
+   	  select count(*) from menu where storeNo = #{storeNo}
+   </select>
+ 
+   <select id="getAttachment" resultType="menuAttachment">
+   	select * from menuAttachment where storeNo = #{storeNo}
+   </select>
+   
+<!--    <select id="selectMenuList" resultType="menu">
+		select m.menuName, m.menuPrice, m.menuCode, m.storeNo, m.soldoutFlag
+>>>>>>> 0b3b16d6e8541d3eee05d2ec27f95ad615ec5831
+		from storeinfo s join menu m on s.storeNo = m.storeNo
+		where
+		s.sellerId = #{sellerId} and s.storeNo = #{storeNo}
+	</select>
+
+	<select id="menuList" resultType="menu">
+		select * from menu where storeNo = #{storeNo}
+	</select>
+
+	<select id="storeInfoList" resultType="storeInfo">
+		select * from storeinfo where storeNo = #{storeNo}
+	</select>
+
+	<select id="menuCount" resultType="_int">
+		select count(*) from menu where storeNo = #{storeNo}
+	</select>
+
+	<select id="getAttachment" resultType="menuAttachment">
+		select * from menuAttachment where storeNo = #{storeNo}
+	</select>
+
+	<select id="selectMenuList" resultType="menu">
+		select m.menuName,
+		m.menuPrice, m.menuCode, m.storeNo, m.soldoutFlag
+		from storeinfo s join
+		menu m on s.storeNo = m.storeNo
+		where s.storeNo = #{storeNo}
+<<<<<<< HEAD
+	</select>
+
+	<select id="getthumbAttachment" resultType="menuAttachment">
+		select * from menuAttachment where storeNo = #{storeNo} and thumbFlag = 'Y'
+	</select>
+
+	<update id="oldThumbNail">
+		update menuAttachment set thumbFlag='N' where renamedfilename=#{nowThumb}
+	</update>
+
+	<update id="changeThmbNail">
+		update menuAttachment set thumbFlag='Y' where renamedfilename=#{newThumb}
+	</update>
+
+	<select id="selectOneMenu" resultType="menu">
+		select * from menu where menuCode = #{menuCode}
+	</select>
+
+	<update id="updateStoreInfo">
+		update storeInfo set storetel=#{storeTel},storeaddress = #{storeAddress},
+		operatinghours=#{operatingHours},personalday=#{personalday} where
+		storeno=#{storeNo}
+	</update>
+
+	<select id="selectListStorInfo" resultType="storeInfo">
+		select * from storeinfo where sellerid = #{sellerId}
+	</select>
+
+	<update id="updateSoldout">
+		update menu set
+		<if test='soldoutFlag eq "N"'>soldoutFlag = 'Y'</if>
+		<if test='soldoutFlag eq "Y"'>soldoutFlag = 'N'</if>
+		where menuCode = #{menuCode}
+	</update>
+
+	<select id="orderList1" resultType="map">
+		select I.*,Z.name from
+		Orderinfo I,(
+		select orderno,LISTAGG(list, '/') within group (order by
+		orderno) name from
+		(select orderno,menuname||' '||amount||'개' as list
+		from(
+		select O.orderno,O.storeno,O.amount,M.menuname from ordermenu
+		O,menu M
+		where O.menucode=M.menucode)) group by orderno order by orderno desc) Z
+		where I.orderno=Z.orderno and storeno=#{storeNo} and receiveFlag='N'
+		and cancelFlag='N'
+	</select>
+
+	<select id="orderList2" resultType="map">
+		select I.*,Z.name from Orderinfo I,(select orderno,LISTAGG(list, '/') within
+		group (order by orderno) name
+=======
+   </select> -->
+   
+   <select id="selectMenuList" resultType="menu">
+		select *
+		from menu m left join menuattachment ma on m.menuCode = ma.menuCode left join storeinfo s on m.storeno = s.storeno
+		where s.storeNo = #{storeNo} and m.delFlag = 'N'
+   </select>
+   
+   <select id="getthumbAttachment" resultType="menuAttachment">
+       	select * from menuAttachment where storeNo = #{storeNo} and thumbFlag = 'Y'
+   </select>
+   
+   <update id="oldThumbNail">
+   		update menuAttachment set thumbFlag='N' where renamedfilename=#{nowThumb}
+   </update>
+   
+   <update id="changeThmbNail">
+   		update menuAttachment set thumbFlag='Y' where renamedfilename=#{newThumb}
+   </update>
+   
+   <select id="selectOneMenu" resultType="menu">
+   		select * from menu where menuCode = #{menuCode}
+   </select>
+   
+   <update id="updateStoreInfo">
+   		update storeInfo set storetel=#{storeTel},storeaddress = #{storeAddress}, operatinghours=#{operatingHours},personalday=#{personalday} where storeno=#{storeNo}
+   </update>
+   
+   <select id="selectListStorInfo" resultType="storeInfo">
+   		select * from storeinfo where sellerid = #{sellerId}
+   </select>
+
+   <update id="updateSoldout">
+   		update menu set
+   			<if test='soldoutFlag eq "N"'>soldoutFlag = 'Y'</if>
+   			<if test='soldoutFlag eq "Y"'>soldoutFlag = 'N'</if>
+   		where menuCode = #{menuCode}
+   </update>
+
+   <select id="orderList1" resultType="map">
+		select I.memberid,I.storeno,I.deliveryFlag,I.cancelFlag,I.receiveFlag,I.priceway,I.paymentid,I.totalprice,I.request,I.ordertime,I.address,I.phone,Z.* from Orderinfo I,(select orderno,LISTAGG(list, '/') within group (order by orderno) name
+		from(select orderno,menuname||' '||amount||'개' as list
+		from(select O.orderno,O.storeno,O.amount,M.menuname from ordermenu O,menu M 
+		where O.menucode=M.menucode)) group by orderno) Z
+		where I.orderno=Z.orderno and storeno=#{storeNo} and receiveFlag='N' and cancelFlag='N' order by I.orderno desc
+   </select>
+   
+    <select id="orderList2" resultType="map">
+		select I.memberid,I.storeno,I.deliveryFlag,I.cancelFlag,I.receiveFlag,I.priceway,I.paymentid,I.totalprice,I.request,I.ordertime,I.address,I.phone,Z.* from Orderinfo I,(select orderno,LISTAGG(list, '/') within group (order by orderno) name
+		from(select orderno,menuname||' '||amount||'개' as list
+		from(select O.orderno,O.storeno,O.amount,M.menuname from ordermenu O,menu M 
+		where O.menucode=M.menucode)) group by orderno) Z
+		where I.orderno=Z.orderno and storeno=#{storeNo} and receiveFlag='N' and deliveryFlag='N' order by I.orderno desc
+	</select>
+
+	<select id="orderList3" resultType="map">
+		select I.memberid,I.storeno,I.deliveryFlag,I.cancelFlag,I.receiveFlag,I.priceway,I.paymentid,I.totalprice,I.request,I.ordertime,I.address,I.phone,Z.* from Orderinfo I,(select orderno,LISTAGG(list, '/') within group (order by orderno) name
+		from(select orderno,menuname||' '||amount||'개' as list
+		from(select O.orderno,O.storeno,O.amount,M.menuname from ordermenu O,menu M 
+		where O.menucode=M.menucode)) group by orderno) Z
+		where I.orderno=Z.orderno and storeno=#{storeNo} and receiveFlag='Y' and deliveryFlag='Y' order by I.orderno desc
+	</select>
+
+	<update id="receiveOrder">
+		update orderinfo set receiveFlag='Y' where orderno=#{orderNo}
+	</update>
+
+	<select id="adSelectAll" resultType="ad">
+		select * from ad where
+		storeNo = #{storeNo } order by adNo desc
+	</select>
+	<select id="adSelectNow" resultType="ad">
+		<![CDATA[ select * from ad where storeNo = #{storeNo } and enddate >= sysdate order by adNo desc]]>
+	</select>
+	<select id="adSelectPast" resultType="ad">
+		<![CDATA[ select * from ad where storeNo = #{storeNo } and enddate < sysdate order by adNo desc]]>
+	</select>
+
+	<select id="countAdAll" resultType="_int">
+		select count(*) as cnt from ad where storeNo = #{storeNo }
+	</select>
+
+	<select id="countAdNow" resultType="_int">
+		<![CDATA[ select count(*) as cnt from ad where storeNo = #{storeNo } and enddate >= sysdate order by adNo desc]]>
+	</select>
+
+	<select id="countAdPast" resultType="_int">
+		 <![CDATA[ select count(*) as cnt from ad where storeNo = #{storeNo } and enddate < sysdate order by adNo desc]]>
+	</select>
+
+	<insert id="adRequest" parameterType="ad">
+		{call
+		declare
+		begin
+		update storeinfo set storegrade=#{storeGrade} where
+		storeNo = #{storeNo};
+		insert into ad values(seq_ad_adno.nextval,
+		#{storeNo}, #{price}, #{storeGrade},sysdate,add_months(sysdate,+1));
+		end
+		}
+	</insert>
+
+	<update id="deliveryEnd">
+		update orderinfo set deliveryFlag='Y',deliveryEnd=sysdate where
+		orderno=#{orderNo}
+	</update>
+
+	<select id="selectOnebyStoreNo" resultType="storeInfo">
+		select * from
+		storeinfo where storeno = #{storeNo}
+	</select>
+
+	<select id="selectAttchMentLsit" resultType="SAttachment">
+		select * from
+		sattachment where storeno = #{storeNo} and status = 'N'
+	</select>
+
+	<update id="deleteFile1">
+		update sattachment set status = 'Y' where
+		originalfilename = #{filename}
+	</update>
+
+	<select id="cancelOrder">
+		update orderinfo set cancelFlag='Y' where orderno=#{orderNo}
+	</select>
+
+	<update id="updateStore">
+		update storeinfo set storeTel =
+		#{storeTel} , storename=#{storeName} ,storeAddress = #{storeAddress} ,
+		categoryNo = #{categoryNo} , storeintro = #{storeIntro} , personalday
+		= #{personalDay} , operatinghours = #{operatingHours} ,
+		deliveryMinPrice =#{deliveryMinPrice} where storeNo = #{storeNo}
+	</update>
+
+	<update id="closedStore">
+		update storeinfo set closeflag = 'Y' where storeNo =
+		#{storeNo}
+	</update>
+
+	<select id="reviewList" resultType="review">
+		SELECT * FROM REVIEW WHERE
+		STORENO = #{storeNo}
+	</select>
+	
+	<insert id="insertReport">
+		insert into report values(seq_report_reportno.nextval , #{category} ,null , #{storeNo} , #{reportDetails}, default)
+	</insert>
+	
+	<select id="selectAllstoreInfo" resultType="storeInfo">
+		select * from storeInfo
+	</select>
+
+</mapper>

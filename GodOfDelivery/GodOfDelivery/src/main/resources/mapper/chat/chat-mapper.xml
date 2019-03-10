@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="chat">
+	<select id="selectChatRoomList" resultMap="chatRoom">
+		select * from chatroom where sellerid=#{sellerId} or sellerid2=#{sellerId}
+	</select>
+	<select id="selectChatLog" resultMap="chatlogmap">
+		select *
+		from(select rownum as rnum, v.*,(select count(*) from (select * from chatroom c left join chat c1 on c.chatroomno= c1.chatroomno where c.chatroomno = #{chatRoomNo} order by sendtime desc) where readflag='N') as notreadcount from(select * from chatroom c left join chat c1 on c.chatroomno= c1.chatroomno where c.chatroomno = #{chatRoomNo} order by sendtime desc) v)v
+		where rnum = 1
+	</select>
+	
+	<select id="selectChattingLogs" resultMap="chat">
+		select * from chatroom c left join chat c1 on c.chatroomno= c1.chatroomno where c.chatroomno = #{chatRoomNo} order by sendtime
+	</select>
+	<!-- 상대방이 읽으면 readFlag를  Y로 바꿔준다. -->
+	<update id="updateReadFlag">
+		update chat set readflag = 'Y' where chatroomno = #{chatRoomNo}
+	</update>
+	<!-- 채팅 로그를 기록한다. -->
+	<insert id="insertChatLogNotRead">
+		insert into chat values(seq_chatno.nextval,#{chatRoomNo},#{chatContent},default,#{sendMember},default)
+	</insert>
+	<insert id="insertChatLogRead">
+		insert into chat values(seq_chatno.nextval,#{chatRoomNo},#{chatContent},default,#{sendMember},'Y')
+	</insert>
+	<!-- 채팅하고자하는 사람를 찾는다. -->
+	<select id="searchPerson" resultType="seller">
+		select * from seller where sellerid like '%'||#{searchId}||'%'
+	</select>
+	<!-- 추가하고자하는 사람과 채팅방이 있는지 확인한다. -->
+	<select id="searchChatRoom" resultMap='chatRoom'>
+		select * from chatroom where (sellerid=#{sellerId} or sellerid2=#{sellerId}) and (sellerid=#{sellerId2} or sellerid2=#{sellerId2})
+	</select>
+	<insert id="createChatRoom" parameterType="chatRoom">
+		insert into chatroom values(seq_chatroomno.nextval,#{sellerId},#{sellerId2})
+		<selectKey keyProperty="chatRoomNo" resultType="_int" order="AFTER">
+			select seq_chatroomno.currval from dual
+		</selectKey>
+	</insert>
+	<!-- rnum이 포함되어있는 resultMap -->
+	<resultMap type="map" id="chatlogmap">
+		<result column="rnum" property="rnum" javaType="string"/>
+		<result column="chatno" property="chatno" javaType="string"/>
+		<result column="chatroomno" property="chatroomno" javaType="string"/>
+		<result column="sendtime" property="sendtime" javaType="string"/>
+		<result column="chatroomno_1" property="chatroomno1" javaType="string"/>
+		<result column="notreadcount" property="NOTREADCOUNT" javaType="string"/>
+	</resultMap>
+	
+	<!-- rnum이 포함되어있지 않는 resultMap -->
+	<resultMap type="map" id="chat">
+		<result column="chatroomno_1" property="chatroomno1" javaType="string"/>
+		<result column="sendtime" property="sendTime" javaType="string"/>
+		<result column="chatno" property="chatNo" javaType="string"/>
+		<result column="chatroomno" property="chatRoomNo" javaType="string"/>
+	</resultMap>
+	<resultMap type="chatRoom" id="chatRoom"></resultMap>
+	
+	<select id="notReadMessageToAdmin" resultType="int">
+		select count(*) from report where reportflag = 'N' union all
+		select count(*) from storeinfo where pmsflag not like 'Y' union all
+		select count(*) from qnaboard where category = 'qna' and boardref is null union all
+		select count(*) from chat C left join chatroom R on C.chatroomno = R.chatroomno where (R.sellerid = #{memberId} or R.sellerid2=#{memberId}) and C.readflag = 'N' and C.sendmember != #{memberId}
+	</select>
+	<select id="notReadMessageToSeller" resultType="int">
+		select count(*) from review where reviewref is null and storeno in (select storeno from storeinfo where sellerid = #{memberId}) union all
+		select count(*) from orderinfo where storeno in (select storeno from storeinfo where sellerid = #{memberId}) and cancelflag = 'N' and receiveflag = 'N' and deliveryflag = 'N' union all
+		select count(*) from chat C left join chatroom R on C.chatroomno = R.chatroomno where (R.sellerid = #{memberId} or R.sellerid2=#{memberId}) and C.readflag = 'N' and C.sendmember != #{memberId}
+	
+	</select>
+	<select id="selectSeller" resultType="seller">
+		select * from seller where sellerid = #{addId}
+	</select>
+	<select id="getAlertListToAdmin" resultMap="getAlertToAdmin">
+		select S.storeno,S.storename,'report' as type from report R left join storeinfo S on R.storeno = S.storeno where reportflag = 'N' union all
+		select boardwriter,boardtitle,'qna' as type from qnaboard where category = 'qna' and boardref is null union all
+		select storeno,storename,'pms' as type from storeinfo where pmsflag not like 'Y' 
+	</select>
+	<select id="getAlertListToSeller" resultMap="getAlertToSeller">
+		select writer,rdate,title,storeno, 'review' as type from review where reviewref is null and storeno in (select storeno from storeinfo where sellerid = #{userId}) union all
+		select memberid,ordertime,phone,storeno ,'order' as type from orderinfo where storeno in (select storeno from storeinfo where sellerid = #{userId}) and cancelflag = 'N' and receiveflag = 'N' and deliveryflag = 'N'
+	</select>
+	<resultMap type="map" id="getAlertToAdmin"></resultMap>
+	<resultMap type="map" id="getAlertToSeller">
+		<result column="rdate" property="RDATE" javaType="string"/>
+	</resultMap>
+</mapper>

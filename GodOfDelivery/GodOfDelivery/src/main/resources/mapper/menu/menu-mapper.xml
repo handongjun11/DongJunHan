@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="menu">
+   <update id="updateMenu">
+   		UPDATE MENU 
+   			<trim prefix="SET" suffixOverrides=",">
+	   			<if test='menuName != null'>MENUNAME = #{menuName},</if>
+	   			<if test='menuPrice != null'>MENUPRICE = #{menuPrice},</if>
+   			</trim>
+   		WHERE MENUCODE = #{menuCode}
+   </update>
+   
+   <update id="updateMenuAttachment">
+   		UPDATE MENUATTACHMENT
+   			<trim prefix="SET" suffixOverrides=",">
+   				RENAMEDFILENAME = #{renamedFileName}
+   			</trim>
+   		WHERE MENUCODE = #{menuCode}
+   </update>
+   
+   <update id="deleteMenu">
+   		update menu set delFlag = 'Y'
+   		where menuCode = #{menuCode}
+   </update>
+   
+   <select id="selectMenuNo" resultType="menu" >
+   		select menuNo from menu where storeNo = #{storeNo}
+   </select>
+   
+   <insert id="insertMenu">
+   		INSERT INTO MENU (storeNo, categoryNo, menuName, menuPrice, menuNo, menuCode) VALUES (#{storeNo}, #{categoryNo}, #{menuName}, #{menuPrice}, #{menuNo}, #{menuCode})
+   </insert>
+   
+   <insert id="insertMenuAttachment">
+   		INSERT INTO MENUATTACHMENT(menuCode, originalFileName, renamedFileName, menuUploadDate, storeNo, status, thumbFlag) VALUES (#{menuCode}, #{originalFileName}, #{renamedFileName}, default, #{storeNo}, default, default)
+   </insert>
+</mapper>

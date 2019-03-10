@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="seller">
+
+	<resultMap type="seller" id="sellerMap">
+      <result column="hobby" property="hobby" typeHandler="strArrTypeHandler"/>
+    </resultMap>
+	<select id="selectOneSeller" resultType="seller" resultMap="sellerMap">
+      select * from seller where sellerid= #{sellerId}
+    </select>
+    
+    <insert id="insertSeller" >
+    	insert into seller(sellerid,sellername,email,phone,enrolldate,delflag,blackflag,password) values(#{sellerId} , #{sellerName} , #{email}, #{phone} , sysdate , default , default , #{password} )
+    </insert>
+    
+	<update id="updatePwd">
+		update seller set password = #{password} where sellerid = #{sellerId}
+	</update>
+	
+	<update id="updateSeller">
+		update seller set email = #{email} , phone = #{phone}  where sellerid = #{sellerId}
+	</update>
+	
+	<insert id="insertOrderInfo">
+		insert into orderinfo(
+		orderNo,phone,address,memberid,storeno,totalPrice,cancelFlag,deliveryFlag,originalPrice,priceWay,receiveFlag,request,paymentId) 
+		values (SEQ_ORDERINFO.nextval,#{phone},#{address},#{memberId},#{storeNo}, #{totalPrice},'N','N',#{orginalPrice},#{priceWay},'N',#{request},#{paymentId})
+	</insert>
+		
+	<insert id="insertOrderMenu">
+	   <selectKey resultType="_int" keyProperty="orderNo" order="BEFORE">
+	   		select SEQ_ORDERINFO.currval from dual
+	   </selectKey>
+		insert into orderMenu(orderno,ordermenuno,menucode,storeno,amount) values (#{orderNo},SEQ_ORDERMENU.nextval,#{menuCode},#{storeNo},#{amount})		
+	</insert>
+
+	<!-- 종합 보기에서 저번주의 판매량을 가지고 오는 쿼리문 -->
+	<select id="totalSaleVolumeofWeek" resultMap="totalOf">
+		select to_char(ordertime,'dy')as orderday,sum(O.totalprice)as totalprice,S1.storename ,sum(O.originalprice)as originalprice, S1.sellerid, O.storeno
+		from orderinfo O left join storeinfo S1 on O.storeno = S1.storeno join seller S2 on S1.sellerid = S2.sellerid
+		where S1.sellerid = #{sellerId} and O.cancelflag = 'N' and ((TRUNC(sysdate, 'iw')-7)- O.ordertime <![CDATA[<=]]> 0) and (TRUNC(sysdate, 'iw') - O.ordertime >= 0)
+		group by to_char(ordertime,'dy'),  S1.storename, O.storeno,S1.sellerid
+	</select>
+	<select id="totalSaleVolumeofToday" resultMap="totalOf">
+		select to_char(ordertime,'hh24')as orderday,sum(O.totalprice)as totalprice,S1.storename ,sum(O.originalprice)as originalprice, S1.sellerid, O.storeno
+		from orderinfo O left join storeinfo S1 on O.storeno = S1.storeno join seller S2 on S1.sellerid = S2.sellerid
+		where S1.sellerid = #{sellerId} and O.cancelflag = 'N'and  O.deliveryflag = 'Y' and (TRUNC(sysdate)- O.ordertime <![CDATA[<=]]> 0) and (TRUNC(sysdate)+1 - O.ordertime >= 0)
+		group by to_char(ordertime,'hh24'), S1.storename, O.storeno,S1.sellerid
+	</select>
+	<select id="totalSaleVolumeofMonth" resultMap="totalOf">
+		select to_char(ordertime,'MM/dd')as orderday,sum(O.totalprice)as totalprice,S1.storename ,sum(O.originalprice)as originalprice, S1.sellerid, O.storeno
+		from orderinfo O left join storeinfo S1 on O.storeno = S1.storeno join seller S2 on S1.sellerid = S2.sellerid
+		where S1.sellerid = #{sellerId} and O.cancelflag = 'N' and O.deliveryflag = 'Y' and extract(month from sysdate)-extract(month from ordertime)=1 
+		group by to_char(ordertime,'MM/dd'), S1.storename, O.storeno,S1.sellerid
+	</select>
+	<select id="totalSaleVolumeof3Month" resultMap="totalOf">
+	select to_char(ordertime,'MM')as orderday,sum(O.totalprice)as totalprice,S1.storename ,sum(O.originalprice)as originalprice, S1.sellerid, O.storeno
+	from orderinfo O left join storeinfo S1 on O.storeno = S1.storeno join seller S2 on S1.sellerid = S2.sellerid
+	where S1.sellerid = #{sellerId} and O.cancelflag = 'N' and O.deliveryflag = 'Y' and extract(month from sysdate)-extract(month from ordertime) >= 1 and  extract(month from sysdate)-extract(month from ordertime) <![CDATA[<=]]> 3
+	group by to_char(ordertime,'MM'), S1.storename, O.storeno,S1.sellerid
+	</select>
+	
+	<select id="chartByPeriod" resultMap="byPeriod">
+		<![CDATA[select period,nvl(column3, 0)as oneSum, nvl(totalSum,0)as totalSum, nvl(D.num,0)as num
+			from
+			(SELECT TO_CHAR(TO_DATE(#{startDate}, 'YYYY/MM/DD')+LEVEL-1, 'YYYY/MM/DD') period
+			FROM DUAL CONNECT BY LEVEL <= (TO_DATE(#{endDate}, 'YYYY/MM/DD')-TO_DATE(#{startDate}, 'YYYY/MM/DD')+1)) A
+			left join 
+			(select to_char(O.ordertime, 'yyyy/mm/dd') column4, nvl(sum(o.totalprice), 0) column3 
+			from orderInfo O
+			where O.storeno = #{storeNo} and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+			group by to_char(O.ordertime, 'yyyy/mm/dd')) B on  A.period = B.column4 
+			left join
+			(select to_char(O.ordertime, 'yyyy/mm/dd') column5, nvl(sum(O.totalPrice), 0) totalSum 
+			from orderInfo O left join storeinfo S on O.storeno = S.storeno
+			where S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+			group by to_char(O.ordertime, 'yyyy/mm/dd')) C on  A.period = C.column5
+			left join
+			(select to_char(O.ordertime, 'yyyy/mm/dd')column1, count( distinct O.storeno) as num
+			from orderInfo O left join storeinfo S on O.storeno = S.storeno
+			where S.categoryno =  (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y' group by to_char(O.ordertime, 'yyyy/mm/dd')) D
+			on D.column1 = A.period
+			order by period
+		]]>
+	</select>
+	<select id="chartBy3Month" resultMap="byPeriod">
+	<![CDATA[select period,nvl(column3, 0)as oneSum, nvl(totalSum,0)as totalSum, nvl(D.num,0)as num
+	from
+	(SELECT distinct(TO_CHAR(TO_DATE(#{startDate}, 'YYYY/MM')+LEVEL-1, 'YYYY/MM')) period
+	FROM DUAL CONNECT BY LEVEL <= (TO_DATE(#{endDate}, 'YYYY/MM')-TO_DATE(#{startDate}, 'YYYY/MM')+1)) A
+	left join 
+	(select to_char(O.ordertime, 'yyyy/mm') column4, nvl(sum(o.totalprice), 0) column3 
+	from orderInfo O
+	where O.storeno = #{storeNo} and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) B on  A.period = B.column4 
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm') column5, nvl(sum(O.totalPrice), 0) totalSum 
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) C on  A.period = C.column5
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm')column1, count( distinct O.storeno) as num
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y' group by to_char(O.ordertime, 'yyyy/mm')) D
+	on D.column1 = A.period
+	order by period
+	]]>
+	</select>
+	
+	<select id="byMemberChartPeriod" resultMap="byMemberChart">
+	<![CDATA[
+	select period,nvl(B.column3, 0)as memberSum, nvl(E.column3,0)as nonmemberSum,nvl(totalSum1,0)as membertotalSum,nvl(totalSum2,0)as nonmembertotalSum, nvl(D.num,0)as num
+	from
+	(SELECT TO_CHAR(TO_DATE(#{startDate}, 'YYYY/MM/DD')+LEVEL-1, 'YYYY/MM/DD') period
+	FROM DUAL CONNECT BY LEVEL <= (TO_DATE(#{endDate}, 'YYYY/MM/DD')-TO_DATE(#{startDate}, 'YYYY/MM/DD')+1)) A
+	left join 
+	(select to_char(O.ordertime, 'yyyy/mm/dd') column4, nvl(sum(o.totalprice), 0) column3 
+	from orderInfo O
+	where O.storeno = #{storeNo} and memberid not  like 'guest_%' and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm/dd')) B on  A.period = B.column4 
+	left join 
+	(select to_char(O.ordertime, 'yyyy/mm/dd') column4, nvl(sum(o.totalprice), 0) column3 
+	from orderInfo O
+	where O.storeno = #{storeNo} and memberid  like 'guest_%' and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm/dd')) E on A.period = E.column4
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm/dd') column5, nvl(sum(O.totalPrice), 0) totalSum1 
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where memberid not like 'guest_%' and S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm/dd')) C on  A.period = C.column5
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm/dd') column5, nvl(sum(O.totalPrice), 0) totalSum2 
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where memberid  like 'guest_%' and S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm/dd')) F on A.period = F.column5
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm/dd')column1, count(distinct O.storeno) as num
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where S.categoryno =  (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm/dd') and to_date(#{endDate}, 'yyyy/mm/dd')+1) and cancelflag = 'N' and deliveryflag='Y' group by to_char(O.ordertime, 'yyyy/mm/dd')) D
+	on D.column1 = A.period
+	order by period	
+	]]>
+	</select>
+	
+	<select id="byMemberChart3Month" resultMap="byMemberChart">
+	<![CDATA[
+	select period,nvl(B.column3, 0)as memberSum, nvl(E.column3,0)as nonmemberSum,nvl(totalSum1,0)as membertotalSum,nvl(totalSum2,0)as nonmembertotalSum, nvl(D.num,0)as num
+	from
+	(SELECT distinct(TO_CHAR(TO_DATE(#{startDate}, 'YYYY/MM')+LEVEL-1, 'YYYY/MM')) period
+	FROM DUAL CONNECT BY LEVEL <= (TO_DATE(#{endDate}, 'YYYY/MM')-TO_DATE(#{startDate}, 'YYYY/MM')+1)) A
+	left join 
+	(select to_char(O.ordertime, 'yyyy/mm') column4, nvl(sum(o.totalprice), 0) column3 
+	from orderInfo O
+	where O.storeno = #{storeNo} and memberid not like 'guest_%' and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) B on  A.period = B.column4 
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm') column4, nvl(sum(o.totalprice), 0) column3 
+	from orderInfo O
+	where O.storeno = #{storeNo} and memberid  like 'guest_%' and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) E on A.period = E.column4
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm') column5, nvl(sum(O.totalPrice), 0) totalSum1 
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where memberid not like 'guest_%'and  S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) C on  A.period = C.column5
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm') column5, nvl(sum(O.totalPrice), 0) totalSum2 
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where memberid  like 'guest_%' and S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y'
+	group by to_char(O.ordertime, 'yyyy/mm')) F on A.period = F.column5
+	left join
+	(select to_char(O.ordertime, 'yyyy/mm')column1, count( distinct O.storeno) as num
+	from orderInfo O left join storeinfo S on O.storeno = S.storeno
+	where S.categoryno = (select  categoryno from storeinfo where storeno = #{storeNo}) and (O.ordertime between to_date(#{startDate}, 'yyyy/mm') and to_date(#{endDate}, 'yyyy/mm')+1) and cancelflag = 'N' and deliveryflag='Y' group by to_char(O.ordertime, 'yyyy/mm')) D
+	on D.column1 = A.period
+	order by period
+	]]>
+	</select>
+	<select id="chartOfToday" resultMap="totalOf">
+		select S.storename,sum(O.totalprice) as totalprice,to_char(ordertime,'hh24') as orderday,sum(originalprice) as originalprice
+		from orderinfo O left join storeinfo S on O.storeno = s.storeno
+		where sellerid = #{sellerId} and O.storeno = #{storeNo} and ordertime between trunc(sysdate)and trunc(sysdate)+1 
+		group by S.storename,to_char(ordertime,'hh24')
+	</select>
+	
+	<select id="getStoreName" resultType="map">
+		select storename, storeno
+		from storeinfo
+		where sellerid = #{sellerId} and storeno = #{storeNo}
+	</select>
+	<resultMap type="map" id="byMemberChart">
+		<result column="memberSum" property="MEMBERSUM" javaType="string"/>
+		<result column="nonmemberSum" property="NONMEMBERSUM" javaType="string"/>
+		<result column="membertotalSum" property="MEMBERTOTALSUM" javaType="string"/>
+		<result column="nonmembertotalSum" property="NONMEMBERTOTALSUM" javaType="string"/>
+		<result column="num" property="NUM" javaType="string"/>
+		<result column="period" property="PERIOD" javaType="string"/>
+	</resultMap>
+	<resultMap type="map" id="byPeriod">
+		<result column="oneSum" property="ONESUM" javaType="string"/>
+		<result column="totalSum" property="TOTALSUM" javaType="string"/>
+		<result column="num" property="NUM" javaType="string"/>
+		<result column="period" property="PERIOD" javaType="string"/>
+	</resultMap>
+	
+	<resultMap type="map" id="totalOf">
+		<result column="originalprice" property="ORIGINALPRICE" javaType="string"/>
+		<result column="totalprice" property="TOTALPRICE" javaType="string"/>
+	</resultMap>
+	
+	<select id="getReview1" resultType="review">
+		select * from review where storeno=#{storeNo} and commentLevel=1
+	</select>
+	
+	<select id="getReview2" resultType="review">
+		select * from review where storeno=#{storeNo} and commentLevel=2
+	</select>
+	
+
+	<select id="sellerfindId" resultType="seller">
+		select * from seller where email = #{email}
+	</select>
+
+	<select id="selectSellerIdByStoreNo" resultType="string">
+		select sellerid from storeinfo where storeno = #{storeNo} 
+
+	</select>
+
+		<!-- 자동로그인 TEST -->
+	<update id="keepLogin">
+		update seller set sessionKey = #{sessionId} , sessionLimit = #{next} where sellerId = #{sellerId}
+	</update>
+	<!-- 	set sessionKey=#{sessionId}, sessionLimit=#{next} where uid=#{uid} -->
+	
+	<select id="checkUserWithSessionKey" resultType="seller">
+		select * from seller where sessionKey = #{sessionId} and sessionLimit > sysdate
+	</select>
+	
+
+
+	<select id="selectSellerBySellerId" resultType="seller">
+		select * from seller where sellerid = #{sellerId}
+	</select>
+	<insert id="createChatRoom">
+		insert into chatroom values(seq_chatroomno.nextval,#{sellerId},#{admin})
+	</insert>
+
+</mapper>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+	<!-- Appenders -->
+	<!-- 전송된 로그를 어디에 출력할지 결정 -->
+	<!-- Appender 는 logger 보다 위에 와야 한다 -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender"> <!-- 콘솔창에 찍히는 appender -->
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c{1} - %m%n" />  <!-- {1} 뒤에서 1번째만 보여줌 -->
+			<!-- <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p:[%L]- %m%n"/> -->
+		</layout>
+	</appender>
+	
+	<!-- 시스템 로깅용 Appender 등록 -->
+	<appender name="fileLogger" class = "org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="C:\\Workspace\\sts_workspace\\01_HelloSpring\\src\\main\\webapp\\WEB-INF\\log\\spring.log"/>
+		<param name="Append" value="true"/>
+		<param name="data" value=".yyyy-mm-dd" /> <!-- 데이터 패턴을 어떻게 기록할지 작성 -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %F:%L - %m%n"/>
+		</layout>
+	</appender>
+	
+	<!-- log4jdbc-remix 로그 출력 appender 추가 -->
+	<appender name="sqlLogger" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %m%n" />
+		</layout>
+	</appender>
+
+    <!-- log4jdbc-remix 관련 logger 시작 -->
+	<!-- Query Loggers  -->
+	<logger name="jdbc.sqlonly" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sqlLogger"/>
+	</logger>
+	<logger name="jdbc.resultsettable" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sqlLogger"/>
+	</logger>
+	
+	
+	<!-- Application Loggers -->
+	<logger name="com.kh.god">
+		<level value="debug" />   <!-- value = "debug" 해두면  Log4jTest.java 에서 debug 로그도 찍힘 -->
+	</logger>
+	
+	<!-- 더 디테일하게 경로 지정도 가능 -->
+	<!-- <logger name="com.kh.spring.member.controller.MemberController"
+			additivity="true"> additivity = false 이면 여기서 출력된건 버블링 되지않고 여기서 지정한 appender에 찍힌다
+		<level value="debug" />
+		<appender-ref ref="console"/>  기존에 있는 appender인  console로 지정해둔상태 내가 만들어도됨.
+	</logger> -->
+	
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.core">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.beans">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="info" />
+	</logger>
+
+
+	<!-- Root Logger -->
+	<!-- Root는 맨 마지막에 와야한다 -->
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="console" />
+		<!-- 시스템 로깅용 Appender 등록 -->
+		<appender-ref ref="fileLogger"/>
+	</root>
+	
+</log4j:configuration>

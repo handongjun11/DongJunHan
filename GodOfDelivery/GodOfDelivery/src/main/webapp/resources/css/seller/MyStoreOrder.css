@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.list-group-item {
+	border-radius: 0.35rem !important;
+	padding: 9px 15px !important;
+}
+#orderWaitng, #list2{
+	margin-left: 0%;
+	margin-top:3%;
+	width:150%;
+    zoom: 0.5;
+}
+.table th, .table td{
+	padding:10px !important;
+	vertical-align:middle !important;
+}
+th[scope=col]{
+	text-align:center;
+}
+th[scope=col]:nth-of-type(1){ /* 주문메뉴 */
+	width:15% !important;
+}
+th[scope=col]:nth-of-type(2){ /* 주소 */
+	width:17.5% !important;
+}
+th[scope=col]:nth-of-type(3){ /* 전화번호 */
+	width:12.5% !important;
+}
+th[scope=col]:nth-of-type(4){ /* 요청사항 */
+	width:17% !important;
+}
+th[scope=col]:nth-of-type(5){ /* 결제수단 */
+	width:10% !important;
+}
+th[scope=col]:nth-of-type(6){ /* 총 가격 */
+	width:5% !important;
+}
+th[scope=col]:nth-of-type(7){ /* 주문시간  */
+	width:10% !important;
+}
+th[scope=col]:nth-of-type(8){ /* 버튼 */
+	width:10% !important;
+}
+#list-tab{
+    width: 50%;
+}

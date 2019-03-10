@@ -1,0 +1,45 @@
+#locationStartNum{
+	width: 15%;
+}
+#tel1{
+	width: 15%;
+	position: relative;
+    left: 17%;
+    top: -38px;
+}
+#tel2{
+	width: 15%;
+	position: relative;
+    top: -70px;
+    left: 33%;
+}
+#tel3{
+	width: 15%;
+	position: relative;
+	top: -100px;
+    left: 35%;
+}
+#address-container{
+	position: relative;
+    top: -75px;
+}
+#updateAddressBtn{
+	margin-top: -21px;
+	
+}
+#personalday-container{
+	margin-top: -55px;
+}
+#thumb{
+	width: 27%;
+    position: absolute;
+ left: 58%;
+    top: 63%;
+}
+.btnGroup{
+	position: relative;
+    left: 66%;
+}
+#address{
+	visibility: hidden;
+}

@@ -1,0 +1,988 @@
+[2019-01-30 17:37:59] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 17:37:59] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 17:37:59 KST 2019]; root of context hierarchy
+[2019-01-30 17:38:00] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 17:38:00] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 17:38:04] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 5649 ms
+[2019-01-30 17:38:05] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 17:38:05] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 17:38:05 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 17:38:05] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 17:38:08] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 17:38:10] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 17:38:10] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 17:38:05 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 17:38:10] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 17:38:05 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 17:38:10] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 17:38:11] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 5914 ms
+[2019-01-30 17:38:16] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:38:16] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:38:16] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:38:16] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:38:18] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:38:20] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:33] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:33] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:33] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:33] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:33] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:34] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:36] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:36] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:36] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:36] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:36] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:36] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:36] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:36] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:36] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:36] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:37] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:37] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:37] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:37] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:38] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:38] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:38] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:38] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:38] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:38] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:38] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:43] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:43] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:43] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:43] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:43] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:43] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:43] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:44] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:44] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:44] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:44] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:44] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:44] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:44] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:45] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:45] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:45] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:45] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:45] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:45] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:39:45] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:39:45] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:39:45] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:39:45] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 17:40:25] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 17:40:25] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 17:40:25] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 17:40:25] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 17:40:25] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 17:40:25] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:20] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 17:38:05 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:14:20] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 17:37:59 KST 2019]; root of context hierarchy
+[2019-01-30 19:14:27] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 19:14:27] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 19:14:27 KST 2019]; root of context hierarchy
+[2019-01-30 19:14:27] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 19:14:28] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 19:14:30] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 3348 ms
+[2019-01-30 19:14:31] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 19:14:31] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:14:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:14:31] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 19:14:32] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 19:14:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 19:14:33] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:14:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:14:33] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:14:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:14:34] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 19:14:34] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3166 ms
+[2019-01-30 19:14:34] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:34] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:34] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:34] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:36] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:36] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:50] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:50] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:50] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:50] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:50] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:50] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:50] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:50] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:50] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:51] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:51] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:51] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:51] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 19:14:51] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 19:14:51] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 19:14:51] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 19:14:51] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 19:54:42] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:14:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:54:42] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 19:14:27 KST 2019]; root of context hierarchy
+[2019-01-30 19:54:54] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 19:54:54] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 19:54:54 KST 2019]; root of context hierarchy
+[2019-01-30 19:54:55] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 19:54:56] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 19:55:03] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 9764 ms
+[2019-01-30 19:55:04] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 19:55:04] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:55:04 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:55:04] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 19:55:06] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 19:55:07] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 19:55:07] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:55:04 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:55:08] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:55:04 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 19:55:08] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 19:55:08] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 4598 ms
+[2019-01-30 20:08:16] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 19:55:04 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:08:16] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 19:54:54 KST 2019]; root of context hierarchy
+[2019-01-30 20:08:28] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:08:28] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:08:28 KST 2019]; root of context hierarchy
+[2019-01-30 20:08:28] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:08:29] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:08:32] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 4801 ms
+[2019-01-30 20:08:33] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:08:33] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:08:33 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:08:33] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:08:34] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:08:34] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:08:34] AbstractApplicationContext.java:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcContentNegotiationManager': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#ed9683e' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ed9683e': Cannot create inner bean '(inner bean)#237f2a92' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#237f2a92': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+[2019-01-30 20:08:35] FrameworkServlet.java:503 - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcContentNegotiationManager': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#ed9683e' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ed9683e': Cannot create inner bean '(inner bean)#237f2a92' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#237f2a92': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:496)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:741)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:638)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:686)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:554)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:499)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:172)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1144)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1091)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:983)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4978)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5290)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1423)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#ed9683e' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ed9683e': Cannot create inner bean '(inner bean)#237f2a92' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#237f2a92': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:327)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:131)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1274)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:254)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1040)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:490)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#ed9683e': Cannot create inner bean '(inner bean)#237f2a92' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#237f2a92': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:327)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:131)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1274)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:312)
+	... 44 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#237f2a92': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:587)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:312)
+	... 52 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:686)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:616)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:613)
+	at org.springframework.aop.config.MethodLocatingFactoryBean.setBeanFactory(MethodLocatingFactoryBean.java:73)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1728)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1693)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:579)
+	... 54 more
+[2019-01-30 20:08:35] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:08:35] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:08:35 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:08:35] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:08:35] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:08:35] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:08:35] AbstractApplicationContext.java:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcContentNegotiationManager': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#534effc5' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#534effc5': Cannot create inner bean '(inner bean)#429aa9cf' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#429aa9cf': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+[2019-01-30 20:08:35] FrameworkServlet.java:503 - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcContentNegotiationManager': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#534effc5' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#534effc5': Cannot create inner bean '(inner bean)#429aa9cf' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#429aa9cf': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:496)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:741)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:638)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:686)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:554)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:499)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:172)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1144)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1091)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:773)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:133)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#534effc5' of type [org.springframework.aop.aspectj.AspectJAroundAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#534effc5': Cannot create inner bean '(inner bean)#429aa9cf' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#429aa9cf': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:327)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:131)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1274)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:254)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1040)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:490)
+	... 34 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#534effc5': Cannot create inner bean '(inner bean)#429aa9cf' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#429aa9cf': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:327)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:131)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:622)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:148)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1274)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:312)
+	... 52 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#429aa9cf': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:587)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:312)
+	... 60 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'loggerAspect' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:686)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:616)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:613)
+	at org.springframework.aop.config.MethodLocatingFactoryBean.setBeanFactory(MethodLocatingFactoryBean.java:73)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1728)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1693)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:579)
+	... 62 more
+[2019-01-30 20:09:33] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:08:28 KST 2019]; root of context hierarchy
+[2019-01-30 20:09:39] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:09:40] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:09:40 KST 2019]; root of context hierarchy
+[2019-01-30 20:09:40] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:09:40] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:09:42] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 3384 ms
+[2019-01-30 20:09:42] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:09:42] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:09:42 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:09:42] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:09:43] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:09:43] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 20:09:45] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:09:46] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:09:46] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:09:42 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:09:46] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:09:42 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:09:46] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 20:09:47] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 5396 ms
+[2019-01-30 20:10:03] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:10:03] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:10:03] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:10:04] LoggerAspect.java:22 - signature = ModelAndView com.kh.spring.memo.controller.MemoController.memo(ModelAndView)
+[2019-01-30 20:10:04] LoggerAspect.java:27 - type = com.kh.spring.memo.controller.MemoController
+[2019-01-30 20:10:04] LoggerAspect.java:28 - methodName = memo
+[2019-01-30 20:10:04] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:10:06] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:10:07] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:43:57] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:09:42 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:43:57] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:09:40 KST 2019]; root of context hierarchy
+[2019-01-30 20:44:01] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:44:02] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:44:02 KST 2019]; root of context hierarchy
+[2019-01-30 20:44:02] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:44:02] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:44:03] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1742 ms
+[2019-01-30 20:44:03] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:44:03] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:44:03 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:44:03] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:44:04] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:44:04] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:44:06] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:44:06] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:44:03 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:44:06] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:44:03 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:44:06] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 20:44:07] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3541 ms
+[2019-01-30 20:44:28] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:44:28] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:44:28] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:44:28] LoggerAspect.java:41 - [Before]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:44:28] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:44:28] LoggerAspect.java:41 - [Before]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:44:28] LoggerAspect.java:41 - [Before]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:44:30] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:44:30] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:46:45] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:44:03 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:46:45] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:44:02 KST 2019]; root of context hierarchy
+[2019-01-30 20:46:49] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:46:49] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:46:49 KST 2019]; root of context hierarchy
+[2019-01-30 20:46:49] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:46:50] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:46:51] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1828 ms
+[2019-01-30 20:46:51] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:46:51] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:46:51 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:46:51] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:46:51] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:46:52] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:46:53] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:46:53] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:46:51 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:46:53] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:46:51 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:46:54] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 20:46:54] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3570 ms
+[2019-01-30 20:46:56] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:46:56] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:46:56] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:46:56] LoggerAspect.java:42 - [Before]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:46:56] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:46:56] LoggerAspect.java:42 - [Before]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:46:56] LoggerAspect.java:42 - [Before]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:46:57] LoggerAspect.java:46 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:46:57] LoggerAspect.java:46 - [After]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:46:57] LoggerAspect.java:46 - [After]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:46:57] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:46:58] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:49:26] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:49:26] LoggerInterceptor.java:23 - /spring/memo/insertMemo.do
+[2019-01-30 20:49:26] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:49:26] LoggerAspect.java:56 - [Before]Controller 	: com.kh.spring.memo.controller.MemoController.insertMemo()
+[2019-01-30 20:49:26] MemoController.java:47 - 메모 등록 요청
+[2019-01-30 20:49:26] LoggerAspect.java:56 - [Before]Service 	: com.kh.spring.memo.model.service.MemoService.insertMemo()
+[2019-01-30 20:49:26] LoggerAspect.java:56 - [Before]Dao 	: com.kh.spring.memo.model.dao.MemoDao.insertMemo()
+[2019-01-30 20:49:26] LoggerAspect.java:60 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.insertMemo()
+[2019-01-30 20:49:26] LoggerAspect.java:60 - [After]Service 	: com.kh.spring.memo.model.service.MemoService.insertMemo()
+[2019-01-30 20:49:26] LoggerAspect.java:60 - [After]Controller 	: com.kh.spring.memo.controller.MemoController.insertMemo()
+[2019-01-30 20:49:26] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:49:26] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:49:28] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:49:28] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:49:28] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:49:28] LoggerAspect.java:56 - [Before]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:49:28] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:49:28] LoggerAspect.java:56 - [Before]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:49:28] LoggerAspect.java:56 - [Before]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:49:28] LoggerAspect.java:60 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:49:28] LoggerAspect.java:60 - [After]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:49:28] LoggerAspect.java:60 - [After]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:49:28] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:49:28] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:56:52] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:46:51 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:56:52] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:46:49 KST 2019]; root of context hierarchy
+[2019-01-30 20:56:56] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:56:56] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:56:56 KST 2019]; root of context hierarchy
+[2019-01-30 20:56:57] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:56:57] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:56:58] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1785 ms
+[2019-01-30 20:56:58] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:56:58] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:56:58 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:56:58] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:56:59] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:56:59] FrameworkServlet.java:503 - Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 10 in XML document from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 10; columnNumber: 20; 주석에서는 "--" 문자열이 허용되지 않습니다.
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:398)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:194)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:133)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:621)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:522)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:638)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:686)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:554)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:499)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:172)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1144)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1091)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:983)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4978)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5290)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1423)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 10; columnNumber: 20; 주석에서는 "--" 문자열이 허용되지 않습니다.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanComment(XMLScanner.java:819)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanComment(XMLDocumentFragmentScannerImpl.java:1034)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2982)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:77)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:428)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	... 29 more
+[2019-01-30 20:57:31] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:56:56 KST 2019]; root of context hierarchy
+[2019-01-30 20:57:36] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:57:36] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:57:36 KST 2019]; root of context hierarchy
+[2019-01-30 20:57:36] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:57:36] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:57:37] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1868 ms
+[2019-01-30 20:57:38] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:57:38] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:57:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:57:38] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:57:38] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:57:39] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:57:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:57:40] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:57:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:57:40] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:57:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:57:41] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 20:57:41] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3326 ms
+[2019-01-30 20:57:53] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:57:53] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:57:53] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:57:53] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:57:54] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:57:55] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 20:58:32] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:57:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:58:32] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:57:36 KST 2019]; root of context hierarchy
+[2019-01-30 20:58:36] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 20:58:36] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 20:58:36 KST 2019]; root of context hierarchy
+[2019-01-30 20:58:37] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 20:58:37] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 20:58:38] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1875 ms
+[2019-01-30 20:58:38] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 20:58:38] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:58:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:58:38] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 20:58:39] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 20:58:39] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 20:58:40] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 20:58:41] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:58:41] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 20:58:41] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:58:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:58:41] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:58:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 20:58:41] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 20:58:42] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3456 ms
+[2019-01-30 20:58:44] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 20:58:44] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 20:58:44] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 20:58:44] LoggerAspect2.java:48 - [Before]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:58:44] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 20:58:44] LoggerAspect2.java:48 - [Before]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:58:44] LoggerAspect2.java:48 - [Before]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:58:45] LoggerAspect2.java:52 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 20:58:45] LoggerAspect2.java:52 - [After]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 20:58:45] LoggerAspect2.java:52 - [After]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 20:58:45] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 20:58:45] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:08:11] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 20:58:38 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:08:11] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 20:58:36 KST 2019]; root of context hierarchy
+[2019-01-30 21:08:17] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:08:17] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:08:17 KST 2019]; root of context hierarchy
+[2019-01-30 21:08:17] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:08:17] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:08:19] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 2111 ms
+[2019-01-30 21:08:19] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:08:19] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:08:19 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:08:19] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:08:19] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:08:20] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:08:22] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:08:22] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:08:19 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:08:22] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:08:19 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:08:22] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:08:23] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 4119 ms
+[2019-01-30 21:08:33] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:08:33] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:08:33] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:08:33] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:08:34] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:08:35] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:08:39] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:08:39] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:08:39] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:08:39] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:08:39] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:08:39] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:08:40] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:08:40] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:08:40] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:08:40] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:08:40] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:08:40] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:09:25] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:08:19 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:09:25] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 21:08:17 KST 2019]; root of context hierarchy
+[2019-01-30 21:09:29] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:09:29] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:09:29 KST 2019]; root of context hierarchy
+[2019-01-30 21:09:29] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:09:29] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:09:31] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 1972 ms
+[2019-01-30 21:09:31] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:09:31] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:09:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:09:31] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:09:31] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:09:32] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:09:33] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:09:33] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:09:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:09:33] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:09:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:09:34] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:09:34] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3397 ms
+[2019-01-30 21:09:48] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:09:48] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:09:48] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:09:48] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:09:49] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:09:49] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:12:56] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:09:31 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:12:56] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 21:09:29 KST 2019]; root of context hierarchy
+[2019-01-30 21:13:00] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:13:00] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:13:00 KST 2019]; root of context hierarchy
+[2019-01-30 21:13:00] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:13:01] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:13:02] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 2018 ms
+[2019-01-30 21:13:02] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:13:02] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:13:02 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:13:02] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:13:03] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:13:03] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:13:05] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:13:06] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:13:02 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:13:06] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:13:02 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:13:06] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:13:06] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 4287 ms
+[2019-01-30 21:13:21] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:13:21] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:13:21] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:13:21] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:13:23] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 21:13:23] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:13:23] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 21:13:23] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:13:23] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:13:23] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:16:47] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:13:02 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:16:47] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 21:13:00 KST 2019]; root of context hierarchy
+[2019-01-30 21:16:54] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:16:54] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:16:54 KST 2019]; root of context hierarchy
+[2019-01-30 21:16:54] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:16:55] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:16:57] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 2858 ms
+[2019-01-30 21:16:57] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:16:57] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:16:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:16:57] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:16:58] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:16:58] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:17:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:17:00] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:16:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:17:00] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:16:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:17:01] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:17:01] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 4187 ms
+[2019-01-30 21:17:08] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:17:08] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:17:08] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:17:08] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:17:09] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 21:17:09] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:17:09] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 21:17:09] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:17:09] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:17:09] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:17:46] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:17:46] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:17:46] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:17:46] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:17:46] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 21:17:46] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:17:46] AdviceSignature.java:44 - adviceSignature@List com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 21:17:46] AdviceSignature.java:52 - 리턴값  = [[memono=2, memo=웅앵웅, password=1234, memodate=2019-01-29], [memono=1, memo=반갑습니다. AOP, password=1234, memodate=2019-01-29], [memono=3, memo=뭐야 돌려줘요, password=0000, memodate=2019-01-30]]
+[2019-01-30 21:17:46] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:17:46] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:17:50] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:16:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:17:50] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 21:16:54 KST 2019]; root of context hierarchy
+[2019-01-30 21:17:55] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:17:55] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:17:55 KST 2019]; root of context hierarchy
+[2019-01-30 21:17:55] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:17:56] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:17:57] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 2118 ms
+[2019-01-30 21:17:57] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:17:57] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:17:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:17:57] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:17:58] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:17:58] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:18:00] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:18:00] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:17:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:18:00] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:17:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:18:00] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:18:01] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 3794 ms
+[2019-01-30 21:18:02] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:18:02] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:18:02] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:18:02] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:18:04] LoggerAspect2.java:54 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 21:18:04] LoggerInterceptor.java:48 - ------------------------- END -------------------------
+[2019-01-30 21:22:31] AbstractApplicationContext.java:993 - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:17:57 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:22:31] AbstractApplicationContext.java:993 - Closing Root WebApplicationContext: startup date [Wed Jan 30 21:17:55 KST 2019]; root of context hierarchy
+[2019-01-30 21:22:36] ContextLoader.java:270 - Root WebApplicationContext: initialization started
+[2019-01-30 21:22:36] AbstractApplicationContext.java:590 - Refreshing Root WebApplicationContext: startup date [Wed Jan 30 21:22:36 KST 2019]; root of context hierarchy
+[2019-01-30 21:22:37] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+[2019-01-30 21:22:37] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/security-context.xml]
+[2019-01-30 21:22:38] ContextLoader.java:310 - Root WebApplicationContext: initialization completed in 2323 ms
+[2019-01-30 21:22:39] FrameworkServlet.java:494 - FrameworkServlet 'appServlet': initialization started
+[2019-01-30 21:22:39] AbstractApplicationContext.java:590 - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:22:39 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:22:39] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[2019-01-30 21:22:40] XmlBeanDefinitionReader.java:316 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/aspect-context.xml]
+[2019-01-30 21:22:41] AutowiredAnnotationBeanPostProcessor.java:154 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo()
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo1.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo1(javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo2.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo2(org.springframework.ui.Model,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String[])
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demo3.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.demo3(org.springframework.ui.Model,com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/insertDev.do],methods=[POST]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.insertDev(com.kh.spring.demo.model.vo.Dev)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/demo/demoList.do]}" onto public java.lang.String com.kh.spring.demo.controller.DemoController.selectDemoList(org.springframework.ui.Model)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.kh.spring.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnroll.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberEnroll()
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberEnrollEnd.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.insertMember(com.kh.spring.member.model.vo.Member,javax.servlet.http.HttpServletRequest)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogin.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.member.controller.MemberController.memberLogin(java.lang.String,java.lang.String,org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberLogout.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberLogout(org.springframework.web.bind.support.SessionStatus)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberView.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberView(java.lang.String,org.springframework.ui.Model)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/member/memberUpdate.do]}" onto public java.lang.String com.kh.spring.member.controller.MemberController.memberUpdate(com.kh.spring.member.model.vo.Member,org.springframework.ui.Model)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/memo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.memo(org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:22:43] AbstractHandlerMethodMapping.java:547 - Mapped "{[/memo/insertMemo.do]}" onto public org.springframework.web.servlet.ModelAndView com.kh.spring.memo.controller.MemoController.insertMemo(com.kh.spring.memo.model.vo.Memo,org.springframework.web.servlet.ModelAndView)
+[2019-01-30 21:22:43] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:22:39 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:22:44] RequestMappingHandlerAdapter.java:574 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Wed Jan 30 21:22:39 KST 2019]; parent: Root WebApplicationContext
+[2019-01-30 21:22:44] AbstractUrlHandlerMapping.java:373 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[2019-01-30 21:22:44] FrameworkServlet.java:509 - FrameworkServlet 'appServlet': initialization completed in 5817 ms
+[2019-01-30 21:22:57] LoggerInterceptor.java:22 - -------------------- Client Request --------------------
+[2019-01-30 21:22:57] LoggerInterceptor.java:23 - /spring/memo/memo.do
+[2019-01-30 21:22:57] LoggerInterceptor.java:24 - --------------------------------------------------------
+[2019-01-30 21:22:58] MemoController.java:32 - 메모 '페이지' 요청
+[2019-01-30 21:22:59] LoggerAspect2.java:56 - [After]Dao 	: com.kh.spring.memo.model.dao.MemoDao.selectMemoList()
+[2019-01-30 21:22:59] LoggerAspect2.java:61 - 0.0
+[2019-01-30 21:22:59] LoggerAspect2.java:56 - [After]Service 	: com.kh.spring.memo.model.service.MemoService.selectMemoList()
+[2019-01-30 21:22:59] LoggerAspect2.java:61 - 0.0
+[2019-01-30 21:22:59] LoggerAspect2.java:56 - [After]Controller 	: com.kh.spring.memo.controller.MemoController.memo()
+[2019-01-30 21:22:59] LoggerAspect2.java:61 - 0.0
+[2019-01-30 21:22:59] LoggerInterceptor.java:35 - ------------------------- view 단-------------------------
+[2019-01-30 21:22:59] LoggerInterceptor.java:48 - ------------------------- END -------------------------
